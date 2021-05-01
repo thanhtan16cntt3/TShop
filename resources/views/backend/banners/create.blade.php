@@ -1,11 +1,16 @@
 @extends('backend.layouts.master')
 
 @section('title', 'TShop | Create Banner')
-
+@push('breadcrumb')
+    <li class="breadcrumb-item" aria-current="page"><a href="{{ route('home-admin') }}" >Dashboard</a></li>
+    <li class="breadcrumb-item" aria-current="page"><a href="{{ route('banner.index') }}" >Banners</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Create banner</li>
+@endpush
 @section('content-main')
-<div class="container-fluid">
     <div class="card shadow mb-4">
-        <h5 class="card-header">Add Banner</h5>
+        <div class="card-header">
+            <h4 class="font-weight-bold text-primary">Add Banner</h4>
+        </div>
         <div class="card-body">
             <form action="{{ route('banner.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -63,7 +68,6 @@
             </form>
         </div>
     </div>
-</div>
 @endsection
 @push('styles')
 <link rel="stylesheet" href="{{asset('assets/backend/admin/summernote/summernote.min.css')}}">
@@ -71,7 +75,7 @@
 @push('scripts')
 
 <script src="{{ asset('vendor/laravel-filemanager/js/stand-alone-button.js') }}"></script>
-<script src="{{asset('assets/backend/admin/summernote/summernote.min.js')}}"></script>
+<script src="{{ asset('assets/backend/admin/summernote/summernote.min.js') }}"></script>
 
 <script>
     $('#lfm').filemanager('image');

@@ -24,7 +24,19 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                @yield('content-main')
+                <div class="container-fluid">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            @stack('breadcrumb')
+                        </ol>
+                    </nav>
+                    <div class="row">
+                        <div class="col-md-12">
+                           @include('backend.layouts.notification')
+                        </div>
+                    </div>
+                    @yield('content-main')
+                </div>
                 <!-- /.container-fluid -->
 
             </div>

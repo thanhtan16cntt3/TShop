@@ -1,11 +1,17 @@
 @extends('backend.layouts.master')
 
 @section('title', 'TShop | Edit Banner')
+@push('breadcrumb')
+<li class="breadcrumb-item" aria-current="page"><a href="{{ route('home-admin') }}" >Dashboard</a></li>
+<li class="breadcrumb-item" aria-current="page"><a href="{{ route('banner.index') }}" >Banners</a></li>
+<li class="breadcrumb-item active" aria-current="page">Edit banner</li>
+@endpush
 
 @section('content-main')
-<div class="container-fluid">
     <div class="card shadow mb-4">
-        <h5 class="card-header">Edit Banner</h5>
+        <div class="card-header">
+            <h4 class="font-weight-bold text-primary">Edit Banner</h4>
+        </div>
         <div class="card-body">
             <form action="{{ route('banner.update', $banner->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -23,7 +29,7 @@
                     <label for="description">Description </label>
                     <textarea name="description" class="form-control @error('description') is-invalid @enderror" id="description" cols="30" rows="4">{!! $banner->description !!}</textarea>
                     @error('description')
-                    <div class="invalid-feedback">
+                        <div class="invalid-feedback">
                             {{ $message }}
                         </div>
                     @enderror
@@ -43,17 +49,6 @@
                     @enderror
                 </div>
                 <img id="holder" src="{{ $banner->photo }}" style="margin-top:15px;max-height:500px;">
-                {{-- <div class="form-group mb-3">
-                    <label for="photo">Photo <span class="text-danger">*</span></label><br>
-                    <img src="{{ asset("storage/banners/$banner->photo") }}" id="photo-banner" class="image-fluid"  style="max-width: 500px;">
-                    <input type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" value="{{ $banner->photo }}" onchange="readUrl(this)">
-
-                    @error('photo')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div> --}}
                 <div class="form-group">
                     <label for="status">Status <span class="text-danger">*</span></label>
                     <select name="status" class="form-control">
@@ -65,7 +60,6 @@
             </form>
         </div>
     </div>
-</div>
 @endsection
 
 @push('styles')

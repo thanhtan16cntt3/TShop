@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="{{ asset('assets/backend/auth/images/icons/favicon.ico') }}"/>
+    <link rel="icon" type="image/png" href="{{ asset('storage/photos/1/Logos/608cff2706628.png') }}"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/auth/vendor/bootstrap/css/bootstrap.min.css') }}">
 <!--===============================================================================================-->

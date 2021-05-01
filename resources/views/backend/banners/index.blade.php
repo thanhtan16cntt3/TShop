@@ -2,16 +2,15 @@
 
 @section('title', 'TShop | Banners')
 
+@push('breadcrumb')
+    <li class="breadcrumb-item" aria-current="page"><a href="{{ route('home-admin') }}" >Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Banner</li>
+@endpush
+
 @section('content-main')
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12">
-            @include('backend.layouts.notification')
-        </div>
-    </div>
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary float-left">Banners List</h6>
+        <div class="card-header">
+            <h4 class="font-weight-bold text-primary float-left">Banners</h4>
             <a href="{{ route('banner.create') }}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Add Banner</a>
         </div>
         <div class="card-body">
@@ -66,7 +65,6 @@
             </div>
         </div>
     </div>
-</div>
 @endsection
 
 @push('scripts')

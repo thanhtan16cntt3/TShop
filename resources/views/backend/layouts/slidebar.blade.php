@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home-admin') }}">
         <div class="sidebar-brand-text mx-3">TShop | ADMIN </div>
     </a>
 
@@ -34,12 +34,12 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-            aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBanner"
+            aria-expanded="true" aria-controls="collapseBanner">
             <i class="fas fa-image fa-cog"></i>
             <span>Banner</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseBanner" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Banner options:</h6>
                 <a class="collapse-item" href="{{ route('banner.index') }}">Banners</a>
@@ -48,6 +48,53 @@
         </div>
     </li>
     <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <div class="sidebar-heading">
+        Posts
+    </div>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePost"
+            aria-expanded="true" aria-controls="collapsePost">
+            <i class="fas fa-folder"></i>
+            <span>Posts</span>
+        </a>
+        <div id="collapsePost" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Posts options:</h6>
+                <a class="collapse-item" href="{{ route('posts.index') }}">Posts</a>
+                <a class="collapse-item" href="{{ route('posts.create') }}">Add Post</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategory"
+            aria-expanded="true" aria-controls="collapseCategory">
+            <i class="fas fa-list-ol"></i>
+            <span>Categories</span>
+        </a>
+        <div id="collapseCategory" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Categories options:</h6>
+                <a class="collapse-item" href="{{ route('categories.index') }}">Categories</a>
+                <a class="collapse-item" href="{{ route('categories.create') }}">Add Category</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTag"
+            aria-expanded="true" aria-controls="collapseTag">
+            <i class="fas fa-tags"></i>
+            <span>Tags</span>
+        </a>
+        <div id="collapseTag" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Tags options:</h6>
+                <a class="collapse-item" href="{{ route('tags.index') }}">Tags</a>
+                <a class="collapse-item" href="{{ route('tags.create') }}">Add tag</a>
+            </div>
+        </div>
+    </li>
     <hr class="sidebar-divider">
 {{--
     <!-- Nav Item - Utilities Collapse Menu -->

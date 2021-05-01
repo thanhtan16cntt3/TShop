@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title')</title>
-
+	<link rel="icon" type="image/png" href="{{ asset('storage/photos/1/Logos/608cff2706628.png') }}"/>
     <!-- Custom fonts for this template-->
     <link href="{{ asset('assets/backend/admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link

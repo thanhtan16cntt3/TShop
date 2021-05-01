@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Repositories\Admin\AdminRepository;
+use App\Repositories\Admin\IAdminRepository;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +17,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(IAdminRepository::class, AdminRepository::class);
+
+
     }
 
     /**
@@ -23,6 +29,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Validator::extend('old_password', function ($attribute, $value, $parameters, $validator){
+            return Hash::check($value, current($parameters));
+        });
     }
 }

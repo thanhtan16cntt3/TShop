@@ -147,5 +147,6 @@ return [
     */
 
     'attributes' => [],
+    'old_password' => "The :attribute not valid",
 
 ];
