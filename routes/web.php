@@ -23,6 +23,16 @@ Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => 'admin', 'middleware'], function (){
+Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function (){
     Route::get('/', 'backend\AdminController@index')->name('home-admin');
+
+    Route::get('/file-manager', function (){
+        return view('backend.layouts.file-manager');
+    })->name('file-manager');
+
+    Route::resource('banner', 'backend\BannerController');
+});
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
 });

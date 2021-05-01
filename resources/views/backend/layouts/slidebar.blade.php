@@ -18,6 +18,15 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
+    <div class="sidebar-heading">
+        Media file manager
+    </div>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('file-manager') }}">
+            <i class="fas fa-fw fa-file-image"></i>
+            <span>Media manager</span></a>
+    </li>
+    <hr class="sidebar-divider">
     <!-- Heading -->
     <div class="sidebar-heading">
         Banner
