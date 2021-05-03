@@ -15,7 +15,7 @@ class TagProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(ITagRepository::class, TagRepository::class);
+        // $this->app->singleton(ITagRepository::class, TagRepository::class);
     }
 
     /**

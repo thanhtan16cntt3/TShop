@@ -15,7 +15,7 @@ class PostCategoryProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(IPostCategoryRepository::class, PostCategoryRepository::class);
+        // $this->app->singleton(IPostCategoryRepository::class, PostCategoryRepository::class);
     }
 
     /**

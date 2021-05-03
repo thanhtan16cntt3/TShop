@@ -95,6 +95,11 @@
             </div>
         </div>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('post-comments.index') }}">
+            <i class="fas fa-comments fa-chart-area"></i>
+            <span>Comments</span></a>
+    </li>
     <hr class="sidebar-divider">
 {{--
     <!-- Nav Item - Utilities Collapse Menu -->

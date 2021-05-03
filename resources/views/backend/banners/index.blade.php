@@ -34,7 +34,13 @@
                                     <td>{{ $banner->title }}</td>
                                     <td>{{ $banner->slug }}</td>
                                     <td><img src="{{ $banner->photo}}" class="img-fluid zoom" style="max-width:80px"></td>
-                                    <td>{{ $banner->status }}</td>
+                                    <td>
+                                        @if ($banner->status === 'active')
+                                            <span class="badge badge-success">active</span>
+                                        @else
+                                            <span class="badge badge-secondary">inactive</span>
+                                        @endif
+                                    </td>
                                     <td>
                                         <a href="{{ route('banner.edit', $banner->id) }}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
                                         <form method="POST" action="{{ route('banner.destroy', $banner->id) }}">

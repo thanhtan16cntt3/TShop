@@ -15,7 +15,7 @@ class BannerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(IBannerRepository::class, BannerRepository::class);
+        // $this->app->singleton(IBannerRepository::class, BannerRepository::class);
     }
 
     /**

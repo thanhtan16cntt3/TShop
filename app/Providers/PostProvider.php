@@ -15,7 +15,7 @@ class PostProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(IPostRepository::class, PostRepository::class);
+        // $this->app->singleton(IPostRepository::class, PostRepository::class);
     }
 
     /**

@@ -176,10 +176,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        App\Providers\BannerServiceProvider::class,
-        App\Providers\PostCategoryProvider::class,
-        App\Providers\TagProvider::class,
-        App\Providers\PostProvider::class,
     ],
 
     /*

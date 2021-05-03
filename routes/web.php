@@ -43,7 +43,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
     Route::resource('posts', 'backend\PostController');
     Route::resource('post-categories', 'backend\PostCategoryController');
     Route::resource('tags', 'backend\TagController');
-
+    Route::resource('post-comments', 'backend\PostCommentController');
 
 
     Route::resource('categories', 'backend\PostController');
