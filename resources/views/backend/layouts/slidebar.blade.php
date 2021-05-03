@@ -76,8 +76,8 @@
         <div id="collapseCategory" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Categories options:</h6>
-                <a class="collapse-item" href="{{ route('categories.index') }}">Categories</a>
-                <a class="collapse-item" href="{{ route('categories.create') }}">Add Category</a>
+                <a class="collapse-item" href="{{ route('post-categories.index') }}">Categories</a>
+                <a class="collapse-item" href="{{ route('post-categories.create') }}">Add Category</a>
             </div>
         </div>
     </li>

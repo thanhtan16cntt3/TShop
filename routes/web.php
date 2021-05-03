@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\backend\Post;
+use App\Models\backend\Tag;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    Auth::logout();
     return view('welcome');
+
 });
 
 Auth::routes(['register' => false]);
@@ -39,8 +41,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
 
     Route::resource('banner', 'backend\BannerController');
     Route::resource('posts', 'backend\PostController');
+    Route::resource('post-categories', 'backend\PostCategoryController');
+    Route::resource('tags', 'backend\TagController');
+
+
+
     Route::resource('categories', 'backend\PostController');
-    Route::resource('tags', 'backend\PostController');
+    // Route::resource('tags', 'backend\PostController');
 
 });
 

@@ -16,11 +16,18 @@ abstract class BaseRepository implements IRepository{
     abstract public function getModel();
 
     public function getAll(){
-        return $this->model::all();
+        return $this->model::OrderBy('id', 'DESC')->get();
     }
 
+    public function getActive(){
+        return $this->model::where('status', 'active')->orderBy('id', 'DESC')->get();
+    }
     public function find($id){
         return $this->model::findOrFail($id);
+    }
+
+    public function getBySlug($slug){
+        return $this->model::where('slug', $slug)->get();
     }
 
     public function create($attributes = []){

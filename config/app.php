@@ -174,10 +174,12 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\BannerServiceProvider::class,
         UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-
+        App\Providers\BannerServiceProvider::class,
+        App\Providers\PostCategoryProvider::class,
+        App\Providers\TagProvider::class,
+        App\Providers\PostProvider::class,
     ],
 
     /*

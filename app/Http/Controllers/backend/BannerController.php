@@ -6,10 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\backend\banner\CreateBannerRequest;
 use App\Http\Requests\backend\banner\UpdateBannerRequest;
 use App\Repositories\Banner\IBannerRepository;
-use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class BannerController extends Controller
@@ -73,7 +70,7 @@ class BannerController extends Controller
         } else{
             request()->session()->flash('error','Error occurred while adding banner');
         }
-        return redirect()->route('banner.index');
+        return redirect()->route('banner.create');
     }
 
     /**

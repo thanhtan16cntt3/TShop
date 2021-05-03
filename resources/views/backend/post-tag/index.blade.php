@@ -1,51 +1,39 @@
 @extends('backend.layouts.master')
 
-@section('title', 'TShop | Post')
+@section('title', 'TShop | Post tag')
 
 @push('breadcrumb')
     <li class="breadcrumb-item" aria-current="page"><a href="{{ route('home-admin') }}" >Dashboard</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Post</li>
+    <li class="breadcrumb-item active" aria-current="page">Post tag</li>
 @endpush
 
 @section('content-main')
     <div class="card shadow mb-4">
         <div class="card-header">
-            <h4 class="font-weight-bold text-primary float-left">Posts</h4>
-            <a href="{{ route('posts.create') }}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add post tag"><i class="fas fa-plus"></i> Add Post</a>
+            <h4 class="font-weight-bold text-primary float-left">Post tags</h4>
+            <a href="{{ route('tags.create') }}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add post tag"><i class="fas fa-plus"></i> Add Post tag</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                @if (count($posts) > 0)
+                @if (count($tags) > 0)
                     <table class="table table-border table-hover" id="banner-dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>S.N.</th>
                                 <th>Title</th>
-                                <th>Category</th>
-                                <th>Tag</th>
-                                <th>Author</th>
-                                <th>Photo</th>
+                                <th>Slug</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($posts as $key => $post)
+                            @foreach ($tags as $key => $tag)
                                 <tr>
-                                    <td>{{ $post->id}}</td>
-                                    <td>{{ $post->title }}</td>
-                                    <td>{{ $post->postCategory->title }}</td>
+                                    <td>{{ $tag->id}}</td>
+                                    <td>{{ $tag->title }}</td>
+                                    <td>{{ $tag->slug }}</td>
                                     <td>
-                                            @foreach ($post->tags as $tag)
-                                            <span class="badge badge-secondary">{{ $tag->title }}</span><br>
-                                            @endforeach
-                                    </td>
-                                    <td>{{ $post->author->name }}</td>
-                                    <td>
-                                        <img src="{{ $post->photo }}" class="img-fluid zoom" style="max-width: 80px">
-                                    </td>
-                                    <td>
-                                        @if ($post->status === 'active')
+                                        @if ($tag->status === 'active')
                                             <span class="badge badge-success">active</span>
                                         @else
                                             <span class="badge badge-secondary">inactive</span>
@@ -53,8 +41,8 @@
 
                                     </td>
                                     <td>
-                                        <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
-                                        <form method="POST" action="{{ route('posts.destroy', $post->id) }}">
+                                        <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
+                                        <form method="POST" action="{{ route('tags.destroy', $tag->id) }}">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger btn-sm dltBtn" data-id=1 style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
@@ -68,18 +56,15 @@
                             <tr>
                                 <th>S.N.</th>
                                 <th>Title</th>
-                                <th>Category</th>
-                                <th>Tag</th>
-                                <th>Author</th>
-                                <th>Photo</th>
+                                <th>Slug</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </tfoot>
                     </table>
-                    {{-- <span style="float:right">{{$posts->links()}}</span> --}}
+                    <span style="float:right">{{$tags->links()}}</span>
                 @else
-                    <h6 class="text-center">No posts found!!! Please create posts</h6>
+                    <h6 class="text-center">No post tag found!!! Please create post tag</h6>
                 @endif
             </div>
         </div>
@@ -103,7 +88,8 @@ $(document).ready(function(){
         var dataID=$(this).data('id');
         // alert(dataID);
         e.preventDefault();
-        swal({
+        swal({postCategories
+postCategories
             title: "Are you sure?",
             text: "Once deleted, you will not be able to recover this data!",
             icon: "warning",
