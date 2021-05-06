@@ -66,7 +66,9 @@ class PostCommentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comment = $this->postCommentRepository->find($id);
+
+        return view('backend.post-comments.edit', compact('comment'));
     }
 
     /**

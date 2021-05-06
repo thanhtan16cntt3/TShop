@@ -45,8 +45,8 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route('posts.edit', $comment->id) }}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
-                                        <form method="POST" action="{{ route('posts.destroy', $comment->id) }}">
+                                        <a href="{{ route('post-comments.edit', $comment->id) }}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
+                                        <form method="POST" action="{{ route('post-comments.destroy', $comment->id) }}">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger btn-sm dltBtn" data-id=1 style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
